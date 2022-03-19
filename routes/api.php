@@ -23,22 +23,24 @@ use App\Http\Controllers\DoctorController;
 
 Route::post('/register', [UserController::class, "register"]);
 Route::post('/login', [UserController::class, "login"]);
-
+Route::post('/add/suggestion', [UserController::class, "add_suggestion"]);
+Route::get('/suggestions', [UserController::class, "get_suggestion"]);
+Route::get('/doctors', [UserController::class, "get_doctor"]);
 //doctors logic
 
-Route::post('/add/doctor', [DoctorController::class, "add"]);
-Route::post('/doctor/login', [DoctorController::class, "login"]);
-Route::post('/doctor/change/status', [DoctorController::class, "online"]);
-Route::get('/doctors', [DoctorController::class, "listdoctors"]);
-Route::get('/available/doctors', [DoctorController::class, "availableDoctors"]);
+// Route::post('/add/doctor', [DoctorController::class, "add"]);
+// Route::post('/doctor/login', [DoctorController::class, "login"]);
+// Route::post('/doctor/change/status', [DoctorController::class, "online"]);
+// Route::get('/doctors', [DoctorController::class, "listdoctors"]);
+// Route::get('/available/doctors', [DoctorController::class, "availableDoctors"]);
 
 //appointments
-Route::post('/add/appointment', [AppointmentController::class, "add"]);
-Route::get('/approve/appointment/{id}', [AppointmentController::class, "approve"]);
-Route::post('/approved/appointments/doctors', [AppointmentController::class, "confirmedAppointments"]);
-Route::post('/pending/appointments/doctors', [AppointmentController::class, "booked"]);
-Route::post('/pending/appointments/patient', [AppointmentController::class, "pendingApproval"]);
-Route::post('/approved/appointments/patient', [AppointmentController::class, "ApprovedPatients"]);
+// Route::post('/add/appointment', [AppointmentController::class, "add"]);
+// Route::get('/approve/appointment/{id}', [AppointmentController::class, "approve"]);
+// Route::post('/approved/appointments/doctors', [AppointmentController::class, "confirmedAppointments"]);
+// Route::post('/pending/appointments/doctors', [AppointmentController::class, "booked"]);
+// Route::post('/pending/appointments/patient', [AppointmentController::class, "pendingApproval"]);
+// Route::post('/approved/appointments/patient', [AppointmentController::class, "ApprovedPatients"]);
 
 //direct messages
 Route::post('/add/message', [MessageController::class, "add"]);

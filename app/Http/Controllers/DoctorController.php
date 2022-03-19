@@ -14,12 +14,13 @@ class DoctorController extends Controller
         $rules = [
             'name' => 'required',
             'email' => 'required',
+            'account'=>'required',
             'password' => 'required',
             'regno' => 'required',
             'availability' => 'required',
         ];
 
-        $input     = $request->only('email','password', 'name','regno', 'availability');
+        $input     = $request->only('email','password', 'account', 'name','regno', 'availability');
         $validator = Validator::make($input, $rules);
 
         if ($validator->fails()) {
@@ -29,6 +30,7 @@ class DoctorController extends Controller
         $data = Doctor::create([
             'name'=>$request->name,
             'email'=>$request->email,
+            'account' => $request->account,
             'regno'=>$request->regno,
             'password'=>$request->password,
             'availability'=>$request->availability,
